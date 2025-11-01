@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+import { initializeApp } from 'firebase/app';
 import { 
   getAuth, 
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged 
-} from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+} from 'firebase/auth';
 import { 
   getFirestore, 
   doc, 
   setDoc, 
   getDoc,
   updateDoc 
-} from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+} from 'firebase/firestore';
 import { Calendar, CheckCircle2, Circle, Plus, X, LogOut, User } from 'lucide-react';
 
 // Firebase configuration
