@@ -18,14 +18,15 @@ import { Calendar, CheckCircle2, Circle, Plus, X, LogOut, User } from 'lucide-re
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDINs7flONNZyrjv5B-uHKVjx5lyLZV9D0",
-  authDomain: "personal-calendar-d1824.firebaseapp.com",
-  projectId: "personal-calendar-d1824",
-  storageBucket: "personal-calendar-d1824.firebasestorage.app",
-  messagingSenderId: "134561162973",
-  appId: "1:134561162973:web:4640f2dfe15bc0eddc5d34",
-  measurementId: "G-9VXKYZ4MTQ"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -75,7 +76,6 @@ export default function ProductivityTracker() {
       console.error('Error loading data:', err);
     }
   };
-
   const saveUserData = async (uid, data) => {
     try {
       const docRef = doc(db, 'users', uid);
